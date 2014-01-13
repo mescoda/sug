@@ -1,2 +1,2 @@
 # Sug
-A Free JS suggestion component
+A jQuery free JS suggestion component
