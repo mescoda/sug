@@ -532,9 +532,9 @@
             }
         }
         if(url.indexOf('?') >= 0) {
-            url = this.options.url + '&' + this.options.param + '=' + currentValue + paramString;
+            url = this.options.url + '&' + this.options.param + '=' + encodeURIComponent(currentValue) + paramString;
         } else {
-            url = this.options.url + '?' + this.options.param + '=' + currentValue + paramString;
+            url = this.options.url + '?' + this.options.param + '=' + encodeURIComponent(currentValue) + paramString;
         }
         FlyJSONP.get({
             url: url,
