@@ -426,10 +426,14 @@
         this.options.inputElemOuterWidth = inputElemClientRec.right - inputElemClientRec.left;
         this.options.inputElemOffset = _getOffset(this.options.inputElem);
 
+        var realSugListWidth = this.options.sugListWidth ? parseInt(this.options.sugListWidth) : this.options.inputElemOuterWidth - 2 * this.options.sugListBorderWidth;
+        realSugListWidth = Math.max(realSugListWidth, 0) + 'px';
+
         _setStyle(this.options.sugListElem, {
             top: this.options.inputElemOffset.top + this.options.inputElemOuterHeight + this.options.offset.top - this.options.sugListBorderWidth + 'px',
             left: this.options.inputElemOffset.left + this.options.offset.left + 'px',
-            width: this.options.sugListWidth ? parseInt(this.options.sugListWidth) + 'px' : this.options.inputElemOuterWidth - 2 * this.options.sugListBorderWidth + 'px'
+            // width: this.options.sugListWidth ? parseInt(this.options.sugListWidth) + 'px' : this.options.inputElemOuterWidth - 2 * this.options.sugListBorderWidth + 'px'
+            width: realSugListWidth
         });
     };
 
